@@ -1,0 +1,37 @@
+<?php
+if(isset($_POST['Submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+$mailto = "jackmcquiggin@hotmail.co.uk";
+$headers = "From: ".$email;
+$txt = "You have received an e-mail from ".$name.".\n\n".$message;
+
+    mail($mailto, $subject, $txt, $headers);
+    header("Location: index.php?mailsend");
+}
+?>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Thank you contacting us</title>
+<link rel="stylesheet" href="styles.css">
+<nav id="navbar" class="nav">
+   <p class="navbar-slogan">Cake Slogan</p>
+	<ul class="nav-list">
+	  <li>
+		<a href="http://phillysbakery.uk">Home</a>
+	  </li>
+	  <li>
+		<a href="http://gallery.phillysbakery.uk">About</a>
+	  </li>
+	  <li>
+		<a href="http://contact.phillysbakey.uk">Contact me</a>
+	  </li>
+	</ul>
+</nav>
+<div id="welcome-section" >
+	<h1 class="maintext"><br><br>Thank you for contacting.</h1>
+</div>
+</html>
